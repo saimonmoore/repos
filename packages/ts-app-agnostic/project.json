@@ -1,0 +1,39 @@
+{
+  "root": "packages/ts-app-agnostic",
+  "sourceRoot": "packages/ts-app-agnostic/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/ts-app-agnostic",
+        "main": "packages/ts-app-agnostic/src/index.ts",
+        "tsConfig": "packages/ts-app-agnostic/tsconfig.app.json",
+        "assets": ["packages/ts-app-agnostic/*.md"]
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/js:node",
+      "options": {
+        "buildTarget": "ts-app-agnostic:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/ts-app-agnostic/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/ts-app-agnostic"],
+      "options": {
+        "jestConfig": "packages/ts-app-agnostic/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

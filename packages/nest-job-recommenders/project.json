@@ -1,0 +1,52 @@
+{
+  "root": "packages/nest-job-recommenders",
+  "sourceRoot": "packages/nest-job-recommenders/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/node:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/nest-job-recommenders",
+        "main": "packages/nest-job-recommenders/src/main.ts",
+        "tsConfig": "packages/nest-job-recommenders/tsconfig.app.json",
+        "assets": ["packages/nest-job-recommenders/src/assets"]
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "extractLicenses": true,
+          "inspect": false,
+          "fileReplacements": [
+            {
+              "replace": "packages/nest-job-recommenders/src/environments/environment.ts",
+              "with": "packages/nest-job-recommenders/src/environments/environment.prod.ts"
+            }
+          ]
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/node:execute",
+      "options": {
+        "buildTarget": "nest-job-recommenders:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/nest-job-recommenders/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/nest-job-recommenders"],
+      "options": {
+        "jestConfig": "packages/nest-job-recommenders/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

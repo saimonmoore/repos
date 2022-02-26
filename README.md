@@ -92,3 +92,18 @@ Nx Cloud pairs with Nx in order to enable you to build and test code more rapidl
 Teams using Nx gain the advantage of building full-stack applications with their preferred framework alongside Nx’s advanced code generation and project dependency graph, plus a unified experience for both frontend and backend developers.
 
 Visit [Nx Cloud](https://nx.app/) to learn more.
+
+
+
+# Saimon's notes
+
+Useful links for generators:
+
+- https://javascript.plainenglish.io/how-to-build-generators-schematics-with-the-superior-nx-devkit-689d8f529fa6
+- https://github.com/nrwl/nx/blob/master/packages/nest/src/generators/application/lib/create-files.ts
+- https://github.com/nrwl/nx/pull/7585/files (for nest)
+- https://github.com/nestjs/schematics/blob/master/src/lib/module/files/ts/__name__.module.ts (for nest)
+- https://nx.dev/generators/workspace-generators
+- https://nx.dev/generators/creating-files
+- https://blog.nrwl.io/using-nx-workspace-generators-to-scaffold-new-blog-posts-8c8162cf857b
+

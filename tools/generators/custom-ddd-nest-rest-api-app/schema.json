@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "cli": "nx",
+  "$id": "custom-ddd-nest-rest-api-app",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Module name",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      }
+    },
+    "projectName": {
+      "type": "string",
+      "description": "Project Name",
+      "$default": {
+        "$source": "projectName"
+      }
+    }
+  },
+  "required": [
+    "name",
+    "projectName"
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "root": "packages/nest-candidate-recommenders",
+  "sourceRoot": "packages/nest-candidate-recommenders/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/node:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/nest-candidate-recommenders",
+        "main": "packages/nest-candidate-recommenders/src/main.ts",
+        "tsConfig": "packages/nest-candidate-recommenders/tsconfig.app.json",
+        "assets": ["packages/nest-candidate-recommenders/src/assets"]
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "extractLicenses": true,
+          "inspect": false,
+          "fileReplacements": [
+            {
+              "replace": "packages/nest-candidate-recommenders/src/environments/environment.ts",
+              "with": "packages/nest-candidate-recommenders/src/environments/environment.prod.ts"
+            }
+          ]
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/node:execute",
+      "options": {
+        "buildTarget": "nest-candidate-recommenders:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/nest-candidate-recommenders/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/nest-candidate-recommenders"],
+      "options": {
+        "jestConfig": "packages/nest-candidate-recommenders/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

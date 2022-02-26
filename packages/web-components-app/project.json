@@ -1,0 +1,70 @@
+{
+  "projectType": "application",
+  "root": "packages/web-components-app",
+  "sourceRoot": "packages/web-components-app/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/packages/web-components-app",
+        "compiler": "babel",
+        "index": "packages/web-components-app/src/index.html",
+        "baseHref": "/",
+        "main": "packages/web-components-app/src/main.ts",
+        "polyfills": "packages/web-components-app/src/polyfills.ts",
+        "tsConfig": "packages/web-components-app/tsconfig.app.json",
+        "assets": [
+          "packages/web-components-app/src/favicon.ico",
+          "packages/web-components-app/src/assets"
+        ],
+        "styles": ["packages/web-components-app/src/styles.scss"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "packages/web-components-app/src/environments/environment.ts",
+              "with": "packages/web-components-app/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "options": {
+        "buildTarget": "web-components-app:build"
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "web-components-app:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/web-components-app/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/web-components-app"],
+      "options": {
+        "jestConfig": "packages/web-components-app/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

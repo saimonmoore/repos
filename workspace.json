@@ -1,4 +1,17 @@
 {
   "version": 2,
-  "projects": {}
+  "projects": {
+    "nest-backend": "packages/nest-backend",
+    "nest-candidate-recommenders": "packages/nest-candidate-recommenders",
+    "nest-job-recommenders": "packages/nest-job-recommenders",
+    "nest-lib": "packages/nest-lib",
+    "next-js-app": "packages/next-js-app",
+    "next-js-app-e2e": "packages/next-js-app-e2e",
+    "react-app": "packages/react-app",
+    "react-app-e2e": "packages/react-app-e2e",
+    "ts-app-agnostic": "packages/ts-app-agnostic",
+    "ts-lib": "packages/ts-lib",
+    "web-components-app": "packages/web-components-app",
+    "web-components-app-e2e": "packages/web-components-app-e2e"
+  }
 }
