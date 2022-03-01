@@ -3,6 +3,6 @@ import { Injectable } from '@nestjs/common';
 @Injectable()
 export class AppService {
   getData(): { message: string } {
-    return { message: 'Welcome to nest-candidate-recommenders!' };
+    return { message: 'Welcome to NX nest-candidate-recommenders!' };
   }
 }
