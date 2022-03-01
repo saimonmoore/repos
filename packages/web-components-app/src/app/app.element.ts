@@ -12,7 +12,7 @@ export class AppElement extends HTMLElement {
         <div id="welcome">
           <h1>
             <span> Hello there, </span>
-            Welcome ${title} 👋
+            Welcome NX ${title} 👋
           </h1>
         </div>
 
